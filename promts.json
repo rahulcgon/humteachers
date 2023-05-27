@@ -1,0 +1,5 @@
+{
+  "lesson_plan": "Create a 45 min lesson plan for the Learning objective selected for a grade {{classes}} class",
+  "worksheet": "Create a Multiple choice question worksheet for Grade {{classes}} class which is being taught {{classes}} class objective ",
+  "activities": "Suggest activities which Teacher can perform with the class to explain the lesson plan {{classes}} in better way"
+}

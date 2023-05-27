@@ -41,7 +41,65 @@ class GenerateOpenApiFrameWork
         );
     }
 
-    public function makeOpenAPIPostCall()
+    public function generateOpenAPI(){
+        $response = $this->makeOpenAPIPostCall1();
+        $response = json_decode($response, true);
+        return $response;
+    }
+
+    private function makeOpenAPIPostCall1() {
+        $curl = curl_init();
+
+        curl_setopt_array($curl, array(
+          CURLOPT_URL => 'https://api.openai.com/v1/chat/completions',
+          CURLOPT_RETURNTRANSFER => true,
+          CURLOPT_ENCODING => '',
+          CURLOPT_MAXREDIRS => 10,
+          CURLOPT_TIMEOUT => 0,
+          CURLOPT_FOLLOWLOCATION => true,
+          CURLOPT_HTTP_VERSION => CURL_HTTP_VERSION_1_1,
+          CURLOPT_CUSTOMREQUEST => 'POST',
+          CURLOPT_POSTFIELDS =>'{
+            "model": "gpt-3.5-turbo",
+            "messages": [
+                {
+                    "role": "user",
+                    "content": "Who won the world series in 2020?"
+                },
+                {
+                    "role": "assistant",
+                    "content": "The Los Angeles Dodgers won the World Series in 2020."
+                },
+                {
+                    "role": "user",
+                    "content": "Describe in 200 words?"
+                }
+            ],
+            "temperature": 1,
+            "top_p": 1,
+            "n": 1,
+            "stream": false,
+            "max_tokens": 1000,
+            "presence_penalty": 0,
+            "frequency_penalty": 0
+        }',
+          CURLOPT_HTTPHEADER => array(
+            'Content-Type: application/json',
+            'Accept: application/json',
+            'Authorization: Bearer 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'
+          ),
+        ));
+
+        $response = curl_exec($curl);
+
+        curl_close($curl);
+
+        return $response;
+
+    }
+
+
+    private function makeOpenAPIPostCall()
     {
         // Initialize cURL session
         $curl = curl_init();

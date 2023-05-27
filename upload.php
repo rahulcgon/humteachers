@@ -1,19 +1,15 @@
 <?php
 if (isset($_POST['upload']) && $_FILES['userfile']['size'] > 0) {
-    $all_documents = db_get_all_documents();
-    foreach ($all_documents as $document) {
-        if ($document['grade'] == $_POST['grade'] &&
-            $document['curriculum'] == $_POST['curriculum'] &&
-            $document['subject'] == $_POST['subject'] &&
-            $document['chapter'] == $_POST['chapter']) {
-            print "Document already exists";
-            return;
-        }
-    }
     $grade = $_POST['grade'];
     $curriculum = $_POST['curriculum'];
     $subject = $_POST['subject'];
     $chapter = $_POST['chapter'];
+
+    $is_exist_documents = db_get_document_by_chapters($grade, $curriculum, $subject, $chapter);
+    if ($is_exist_documents) {
+        print "Document already exists";
+        return;
+    }
 
     $fileName = $_FILES['userfile']['name'];
     $tmpName  = $_FILES['userfile']['tmp_name'];
