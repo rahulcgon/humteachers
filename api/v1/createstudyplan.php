@@ -12,12 +12,17 @@ function create_teaching_plan()
 
     error_log("create_teaching_plan: " . $json_data);
 
+    // $grade = $data['grade'];
+    // $curriculum = $data['curriculum'];
+    // $subject = $data['subject'];
+    // $chapter = $data['chapter'];
+    // $classes = $data['classes'];
 
-    $grade = $data[0]['grade'];
-    $curriculum = $data[0]['curriculum'];
-    $subject = $data[0]['subject'];
-    $chapter = $data[0]['chapter'];
-    $classes = $data[0]['classes'];
+    $grade = "Grade 3";
+    $curriculum = "State Curriculum";
+    $subject = "History";
+    $chapter = "Landforms";
+    $classes =  5;
 
     $documentData = db_get_document_by_chapters($grade, $curriculum, $subject, $chapter);
     if (!$documentData) {

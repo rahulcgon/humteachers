@@ -1,0 +1,55 @@
+.sp-quantity {
+    width:124px;
+    height:42px;
+    font-family:"ProximaNova Bold", Helvetica, Arial;
+}
+.sp-minus {
+    width:40px;
+    height:40px;
+    border:1px solid #e1e1e1;
+    float:left;
+    text-align:center;
+}
+.sp-input {
+    width:40px;
+    height:40px;
+    border:1px solid #e1e1e1;
+    border-left:0px solid black;
+    float:left;
+}
+.sp-plus {
+    width:40px;
+    height:40px;
+    border:1px solid #e1e1e1;
+    border-left:0px solid #e1e1e1;
+    float:left;
+    text-align:center;
+}
+.sp-input input {
+    width:30px;
+    height:34px;
+    text-align:center;
+    font-family:"ProximaNova Bold", Helvetica, Arial;
+    border: none;
+    font-size: 24px;
+}
+.sp-input input:focus {
+    border:1px solid #e1e1e1;
+    border: none;
+}
+.sp-minus a, .sp-plus a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: cyan;
+    font-size: xx-large;
+}
+
+/* center a div and put middle with 200px*/
+#teaching_plan_center {
+    margin: auto;
+    width: 50%;
+    border: 3px solid #73AD21;
+    padding: 10px;
+}
+

@@ -2,6 +2,7 @@
 
 function generateRandomValue($array)
 {
+    return "";
     // Define arrays of possible values
     $grades = array('Grade 1', 'Grade 2', 'Grade 3', 'Grade 4', 'Grade 5');
     $curricula = array('National Curriculum', 'International Baccalaureate', 'State Curriculum');

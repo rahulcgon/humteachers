@@ -1,5 +1,6 @@
 {
   "lesson_plan": "Create a 45 min lesson plan for the Learning objective selected for a grade {{classes}} class",
   "worksheet": "Create a Multiple choice question worksheet for Grade {{classes}} class which is being taught {{classes}} class objective ",
-  "activities": "Suggest activities which Teacher can perform with the class to explain the lesson plan {{classes}} in better way"
+  "activities": "Suggest activities which Teacher can perform with the class to explain the lesson plan {{classes}} in better way",
+  "slides" : "The teacher now wants to teach the {{objective}} in form of Presentation. Please create a class presentation for her in a slide by slide format, which she can directly paste on the slides to present to the students. Please keep the text student facing. Please do not mention any instructions. Just the slide numbers and info to be present on the slide. Please keep the slides count to less than 10."
 }
