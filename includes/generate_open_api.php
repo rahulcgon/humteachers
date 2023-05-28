@@ -31,11 +31,11 @@ class GenerateOpenApiFrameWork
         $this->openApiPostPayload = array(
             "model" => self::OPEN_API_MODEL,
             "messages" => '',
-            "temperature" => 1,
-            "top_p" => 1,
+            "temperature" => 0,
+            "top_p" => 0.5,
             "n" => 1,
             "stream" => false,
-            "max_tokens" => 1000,
+            "max_tokens" => 10,
             "presence_penalty" => 0,
             "frequency_penalty" => 0
         );

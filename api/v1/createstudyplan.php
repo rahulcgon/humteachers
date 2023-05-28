@@ -59,10 +59,9 @@ function create_teaching_plan()
             if($subject == "Science") {
                 $prompt = "Create a detailed lesson plan for a 45-minute class on for 6th-grade students. The lesson should follow The 5E Instructional Model (Engage, Explore, Explain, Elaborate, Evaluate).";
             } else {
-                $prompt = str_replace("{{subject}}", "Social Studies", $prompt);
+                $prompt = "Create a detailed lesson plan for a 45-minute class on for 6th-grade students. The lesson should follow Bruner's Theory of 'Discovery Learning'.";
             }
         }
-        $prompt = str_replace("{{classes}}", $classes, $prompt);
         $messages = [
             [
                 "role" => "system",
@@ -70,7 +69,7 @@ function create_teaching_plan()
             ],
             [
                 "role" => "user",
-                "content" => $prompt
+                "content" => $prompt,
             ]
         ];
         $openAPI = new GenerateOpenApiFrameWork();
