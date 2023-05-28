@@ -25,14 +25,17 @@ $(function () {
     let curriculum = $("#curriculum :selected").val();
     let subject = $("#subject :selected").val();
     let chapter = $("#chapter :selected").val();
-    let classes = $("#hours").val();
+    if(chapter.length == 0){
+      alert("Please enter chapter");
+      return false;
+    }
+
 
     let post_data = {
       grade: grade,
       curriculum: curriculum,
       subject: subject,
-      chapter: chapter,
-      classes: classes,
+      chapter: chapter
     };
 
     console.table(post_data);
@@ -71,7 +74,17 @@ $(function () {
     event.preventDefault();
   });
 
-  // add loader while response is not receive
+  // based upon selected subject chapter will be populated
+  $("#subject").change(function () {
+    let subject = $("#subject :selected").val();
+    let post_data = {
+      "Maths": "Chapter 3 - Playing with Numbers",
+      "Science": "Chapter 4 - Getting to know Plants",
+    };
+
+    let chapter = post_data[subject];
+    $("#chapter").val(chapter);
+  });
 });
 
 function append_body_div(message = "") {

@@ -12,17 +12,10 @@ function create_teaching_plan()
 
     error_log("create_teaching_plan: " . $json_data);
 
-    // $grade = $data['grade'];
-    // $curriculum = $data['curriculum'];
-    // $subject = $data['subject'];
-    // $chapter = $data['chapter'];
-    // $classes = $data['classes'];
-
-    $grade = "Grade 3";
-    $curriculum = "State Curriculum";
-    $subject = "History";
-    $chapter = "Landforms";
-    $classes =  5;
+    $grade = $data['grade'];
+    $curriculum = $data['curriculum'];
+    $subject = $data['subject'];
+    $chapter = $data['chapter'];
 
     $documentData = db_get_document_by_chapters($grade, $curriculum, $subject, $chapter);
     if (!$documentData) {
@@ -62,6 +55,13 @@ function create_teaching_plan()
 
     $additional_params = [];
     foreach ($prompts as $prompt_key => $prompt) {
+        if($prompt_key == "lessson_plan") {
+            if($subject == "Science") {
+                $prompt = "Create a detailed lesson plan for a 45-minute class on for 6th-grade students. The lesson should follow The 5E Instructional Model (Engage, Explore, Explain, Elaborate, Evaluate).";
+            } else {
+                $prompt = str_replace("{{subject}}", "Social Studies", $prompt);
+            }
+        }
         $prompt = str_replace("{{classes}}", $classes, $prompt);
         $messages = [
             [

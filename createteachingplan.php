@@ -32,7 +32,9 @@ include "included_files.php";
 $grade = ["Grade 6"];
 $curriculum = ["NCERT"];
 $subject = ["Mathematics", "Science", "Social Science"];
-$chapter = ["Chapter 1", "Chapter 2", "Chapter 3"];
+$subject = ["", "Maths", "Science"];
+$chapter = ["","Chapter 3 - Playing with Numbers", "Chapter 4 - Getting to know Plants"];
+
 $classes =  [1, 2, 3, 4, 5, 6, 7, 8, 9];
 
 

@@ -1,15 +1,14 @@
 <?php
-// Path: index.php
-include 'test.php';
-include 'model.inc';
-include 'utils.php';
-include_once "database_init.php";
 
-include 'upload_form.php';
-
-include 'upload.php';
+print "Welcome to Teacher's AI"
 
 
+?>
 
-// displaying the list of documents
-include "document_list.php";
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<a href="/createteachingplan.php">Go to Create Teaching Plan</a>
