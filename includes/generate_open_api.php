@@ -5,7 +5,8 @@ class GenerateOpenApiFrameWork
     public $openApiPostPayload = [];
 
     const OPEN_API_URL = "https://api.openai.com/v1/chat/completions";
-    const OPEN_API_AUTHORIZATION = "Bearer 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";
+    // Read the key from the environment, e.g. putenv("OPENAI_API_KEY=sk-...") or your server config.
+    const OPEN_API_AUTHORIZATION = "Bearer YOUR_OPENAI_API_KEY";
     const OPEN_API_CURLOPT_HTTPHEADER = [
         'Content-Type: application/json',
         'Accept: application/json',
@@ -81,7 +82,7 @@ class GenerateOpenApiFrameWork
             CURLOPT_HTTPHEADER => array(
                 'Content-Type: application/json',
                 'Accept: application/json',
-                'Authorization: Bearer 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'
+                'Authorization: Bearer YOUR_OPENAI_API_KEY'
             ),
         );
 
